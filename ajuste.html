@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajustes - Wime</title>
+  <link rel="stylesheet" href="../css/ajuste.css">
+  <style>
+    .avatar-edit-box { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+    .avatar-preview { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-dark); background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.4rem; color: var(--color-white); }
+    .sports-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+    .sport-chip { display: flex; align-items: center; gap: 6px; background: var(--color-gray-light); border: 1.5px solid var(--color-dark); padding: 6px 12px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; cursor: pointer; }
+    .danger-zone { margin-top: 32px; padding-top: 20px; border-top: 2px solid var(--color-gray-light); }
+    .danger-zone h3 { color: #dc2626; font-size: 1.05rem; margin-bottom: 6px; }
+    .btn-danger { background: #dc2626; color: #fff; border: none; padding: 10px 16px; border-radius: 6px; cursor: pointer; font-weight: 600; }
+  </style>
+</head>
+<body>
+
+  <header class="top-bar">
+    <div class="top-bar-left">
+      <a href="paginaprincipal.html" class="btn-voltar-top">
+        <span class="arrow">←</span>
+        <span>Voltar</span>
+      </a>
+      <div class="logo">
+        <span class="logo-icon">✦</span>
+        <span class="logo-text">Wime</span>
+      </div>
+    </div>
+
+    <div class="user-profile">
+      <span class="user-name">Nome do Usuário</span>
+      <div class="profile-avatar" title="Perfil do Usuário">
+        <span class="avatar-placeholder">U</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <button class="menu-btn" id="menuBtn" title="Menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+        <nav class="hamburger-menu" id="hamburgerMenu">
+          <a href="ajuste.html" class="menu-item">Ajuste</a>
+          <a href="historico.html" class="menu-item">Histórico</a>
+          <a href="avisos.html" class="menu-item">Avisos</a>
+          <a href="favoritos.html" class="menu-item">Favoritos</a>
+          <a href="ajuda.html" class="menu-item">Ajuda</a>
+        </nav>
+
+        <div class="sidebar-map">
+          <p>🗺️ Mapa</p>
+        </div>
+      </div>
+
+      <div class="sidebar-bottom">
+        <a href="denuncia.html" class="btn-action">denúncia</a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <section class="settings-card">
+        <h2>⚙️ Ajustes da Conta</h2>
+        <p class="subtitle">Gerencie suas preferências, foto, nível e esportes de interesse.</p>
+
+        <form id="formAjustes">
+          <div class="avatar-edit-box">
+            <img id="avatarPreviewImg" src="" alt="Foto" class="avatar-preview" style="display:none;">
+            <div id="avatarPreviewLetter" class="avatar-preview">U</div>
+            <div>
+              <label for="fotoPerfil" style="font-weight:600; display:block; margin-bottom:4px;">Foto de Perfil</label>
+              <input type="file" id="fotoPerfil" accept="image/*">
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label for="nome">Nome de Usuário</label>
+            <input type="text" id="nome" class="custom-input" value="Nome do Usuário" required>
+          </div>
+
+          <div class="input-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" class="custom-input" placeholder="seuemail@exemplo.com">
+          </div>
+
+          <div class="input-group">
+            <label for="nivel">Nível Esportivo</label>
+            <select id="nivel" class="custom-input">
+              <option value="Iniciante">Iniciante</option>
+              <option value="Intermediário" selected>Intermediário</option>
+              <option value="Avançado">Avançado</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label>Esportes de Interesse</label>
+            <div class="sports-grid">
+              <label class="sport-chip"><input type="checkbox" name="esportes" value="Futebol" checked> ⚽ Futebol</label>
+              <label class="sport-chip"><input type="checkbox" name="esportes" value="Vôlei"> 🏐 Vôlei</label>
+              <label class="sport-chip"><input type="checkbox" name="esportes" value="Basquete"> 🏀 Basquete</label>
+              <label class="sport-chip"><input type="checkbox" name="esportes" value="Futevôlei"> 🏖️ Futevôlei</label>
+              <label class="sport-chip"><input type="checkbox" name="esportes" value="Tênis"> 🎾 Tênis</label>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label for="notificacoes">Notificações Push</label>
+            <select id="notificacoes" class="custom-input">
+              <option value="todas">Ativadas (Todas: 1h antes, chat e avisos)</option>
+              <option value="importantes">Apenas Importantes (1h antes e cancelamentos)</option>
+              <option value="desativadas">Desativadas</option>
+            </select>
+          </div>
+
+          <div class="button-group">
+            <button type="submit" class="btn-join">Salvar Alterações</button>
+          </div>
+        </form>
+
+        <div class="danger-zone">
+          <h3>⚠️ Excluir Conta</h3>
+          <p style="font-size: 0.85rem; color: var(--color-gray-text); margin-bottom: 12px;">
+            Ao deletar sua conta, todos os seus dados pessoais, histórico e preferências serão permanentemente apagados.
+          </p>
+          <button type="button" id="btnDeletarConta" class="btn-danger">Deletar Minha Conta</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="../js/ajuste.js"></script>
+</body>
+</html>

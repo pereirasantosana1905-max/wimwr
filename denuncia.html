@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wime - Fazer Denúncia</title>
+  <link rel="stylesheet" href="../css/denuncia.css">
+</head>
+<body>
+
+  <!-- Faixa / Barra Superior -->
+  <header class="top-bar">
+    <div class="top-bar-left">
+      <a href="paginaprincipal.html" class="btn-voltar-top">
+        <span class="arrow">←</span>
+        <span>Voltar</span>
+      </a>
+      <div class="logo">
+        <span class="logo-icon">✦</span>
+        <span class="logo-text">Wime</span>
+      </div>
+    </div>
+
+    <div class="user-profile">
+      <span class="user-name">Nome do Usuário</span>
+      <div class="profile-avatar" title="Perfil do Usuário">
+        <span class="avatar-placeholder">U</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Estrutura Principal -->
+  <div class="app-layout">
+    
+    <!-- Barra Lateral (Sidebar) -->
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <button class="menu-btn" id="menuBtn" title="Menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+        <nav class="hamburger-menu" id="hamburgerMenu">
+          <a href="ajuste.html" class="menu-item">Ajuste</a>
+          <a href="historico.html" class="menu-item">Histórico</a>
+          <a href="avisos.html" class="menu-item">Avisos</a>
+          <a href="favoritos.html" class="menu-item">Favoritos</a>
+          <a href="ajuda.html" class="menu-item">Ajuda</a>
+        </nav>
+
+        <div class="sidebar-map">
+          <p>🗺️ Mapa</p>
+        </div>
+      </div>
+
+      <div class="sidebar-bottom">
+        <a href="denuncia.html" class="btn-action">denúncia</a>
+      </div>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+      <section class="form-section">
+        <div class="form-card">
+          <h2>🚨 Central de Denúncias</h2>
+          <p class="subtitle">Preencha o formulário para analisarmos a ocorrência.</p>
+
+          <form id="formDenuncia">
+            <div class="input-group">
+              <label for="motivo">Motivo da Denúncia</label>
+              <select id="motivo" class="custom-input" required>
+                <option value="" disabled selected>Selecione um motivo...</option>
+                <option value="comportamento">Comportamento Inadequado / Ofensivo</option>
+                <option value="ausencia">Ausência injustificada na partida (W.O.)</option>
+                <option value="perfil_falso">Perfil Falso ou Dados Incorretos</option>
+                <option value="outro">Outro motivo</option>
+              </select>
+            </div>
+
+            <div class="input-group">
+              <label for="denunciado">Usuário ou Partida</label>
+              <input type="text" id="denunciado" class="custom-input" placeholder="Ex: Nome do jogador ou Partida" required>
+            </div>
+
+            <div class="input-group">
+              <label for="descricao">Descrição</label>
+              <textarea id="descricao" class="custom-input" rows="4" placeholder="Descreva em detalhes o que aconteceu..." required></textarea>
+            </div>
+
+            <div class="button-group">
+              <a href="paginaprincipal.html" class="btn-secondary">Cancelar</a>
+              <button type="submit" class="btn-join">Enviar Denúncia</button>
+            </div>
+          </form>
+
+          <div id="mensagemSucesso" class="mensagem-sucesso hidden">
+            ✅ Denúncia enviada com sucesso! Redirecionando...
+          </div>
+        </div>
+      </section>
+    </main>
+
+  </div>
+
+  <script src="../js/denuncia.js"></script>
+</body>
+</html>

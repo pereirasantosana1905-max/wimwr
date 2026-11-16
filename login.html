@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Wime</title>
+  <link rel="stylesheet" href="../css/login.css">
+  <style>
+    .social-login-group { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+    .btn-social-login { width: 100%; padding: 11px; border-radius: 8px; border: 1px solid #cbd5e1; background: #fff; color: #0f172a; font-weight: 600; cursor: pointer; }
+    .btn-social-login.apple { background: #000; color: #fff; border-color: #000; }
+    .or-separator { text-align: center; font-size: 0.85rem; color: #64748b; margin-bottom: 14px; }
+  </style>
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header class="navbar">
+    <div class="logo">
+      <span class="logo-icon">⚽</span>
+      <span class="logo-text">Wime</span>
+    </div>
+    <nav class="nav-links">
+      <a href="inicio.html">Início</a>
+      <a href="recursos.html">Recursos</a>
+      <a href="precos.html">Preços</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="btn-outline" onclick="window.location.href='ajuda.html'">Ajuda</button>
+      <button class="btn-primary" onclick="window.location.href='cadastro.html'">Experimente</button>
+    </div>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main class="main-container">
+  
+    <!-- Lado Esquerdo: Login -->
+    <section class="login-section">
+      <div class="headline">
+        <h1>Crie suas partidas,<br>Jogue em qualquer lugar.</h1>
+        <p>Acesse sua conta para explorar todos os recursos</p>
+      </div>
+
+      <div class="card-login">
+        <!-- Login Instantâneo Google e Apple -->
+        <div class="social-login-group">
+          <button type="button" class="btn-social-login" onclick="socialLogin('Google')">G Entrar com Google</button>
+          <button type="button" class="btn-social-login apple" onclick="socialLogin('Apple')"> Entrar com Apple</button>
+        </div>
+
+        <div class="or-separator">ou continue com e-mail</div>
+
+        <form class="form" id="formLogin">
+          <div class="input-field">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" placeholder="nome@exemplo.com" required>
+          </div>
+
+          <div class="input-field">
+            <label for="password">Senha</label>
+            <input type="password" id="password" placeholder="••••••••" required>
+          </div>
+
+          <button type="submit" class="btn-submit">Continuar com e-mail</button>
+        </form>
+
+        <div class="signup-prompt">
+          <span>Ainda não tem conta?</span>
+          <a href="cadastro.html">Cadastre-se do zero</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lado Direito: Mostruário -->
+    <section class="showcase-section">
+      <div class="showcase-card">
+        <div class="badge">Novo recurso</div>
+        <h2>Sua aplicação em outro nível</h2>
+        <p>Encontre partidas em até 15 km, converse no chat exclusivo e organize seus jogos em segundos.</p>
+      
+        <div class="mockup-box">
+          <div class="mockup-header">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <div class="mockup-content">
+            <div class="skeleton-line full"></div>
+            <div class="skeleton-line medium"></div>
+            <div class="skeleton-pill"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    function socialLogin(provider) {
+      window.location.href = "paginaprincipal.html";
+    }
+
+    document.getElementById("formLogin").addEventListener("submit", (e) => {
+      e.preventDefault();
+      window.location.href = "paginaprincipal.html";
+    });
+  </script>
+</body>
+</html>

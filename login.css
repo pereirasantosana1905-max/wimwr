@@ -1,0 +1,239 @@
+:root {
+   --color-primary: #6A77C4;
+   --color-secondary: #AC94DE;
+   --color-accent: #EEB2F9;
+   --color-dark: #3C3374;
+   --color-white: #FFFFFF;
+   --color-bg: #F9FAFC;
+   --color-gray-light: #EFEFF6;
+   --color-gray-text: #6B7280;
+ }
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+ }
+ body {
+   background-color: var(--color-bg);
+   color: var(--color-dark);
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+ }
+ /* Header */
+ .navbar {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 1.2rem 3rem;
+   background-color: var(--color-white);
+   border-bottom: 1px solid var(--color-gray-light);
+ }
+ .logo {
+   display: flex;
+   align-items: center;
+   gap: 0.5rem;
+   font-weight: 700;
+   font-size: 1.25rem;
+   color: var(--color-dark);
+   font-family: 'libre barkerville';
+ }
+ .logo-icon {
+   color: var(--color-accent);
+ }
+ .nav-links a {
+   margin: 0 1rem;
+   text-decoration: none;
+   color: var(--color-dark);
+   font-size: 0.95rem;
+   font-weight: 500;
+ }
+ .nav-actions {
+   display: flex;
+   gap: 0.75rem;
+ }
+ .btn-outline {
+   padding: 0.5rem 1rem;
+   border: 1px solid var(--color-primary);
+   background: transparent;
+   color: var(--color-primary);
+   border-radius: 6px;
+   cursor: pointer;
+   font-weight: 600;
+ }
+ .btn-primary {
+   padding: 0.5rem 1rem;
+   background-color: var(--color-dark);
+   color: var(--color-white);
+   border: none;
+   border-radius: 6px;
+   cursor: pointer;
+   font-weight: 600;
+ }
+ /* Layout Split Principal */
+ .main-container {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   max-width: 1200px;
+   margin: 2rem auto;
+   padding: 0 2rem;
+   gap: 3rem;
+   flex: 1;
+   align-items: center;
+ }
+ /* Lado Esquerdo - Form */
+ .login-section {
+   display: flex;
+   flex-direction: column;
+   gap: 1.5rem;
+   max-width: 440px;
+ }
+ .headline h1 {
+   font-size: 2.2rem;
+   color: var(--color-dark);
+   line-height: 1.2;
+   margin-bottom: 0.5rem;
+ }
+ .headline p {
+   color: var(--color-gray-text);
+   font-size: 1rem;
+ }
+ .card-login {
+   background: var(--color-white);
+   padding: 2rem;
+   border-radius: 16px;
+   border: 1px solid var(--color-gray-light);
+   box-shadow: 0 4px 20px rgba(60, 51, 116, 0.05);
+ }
+ .input-field {
+   display: flex;
+   flex-direction: column;
+   gap: 0.4rem;
+   margin-bottom: 1rem;
+ }
+ .input-field label {
+   font-size: 0.85rem;
+   font-weight: 600;
+   color: var(--color-dark);
+ }
+ .input-field input {
+   padding: 0.75rem 1rem;
+   border: 1px solid var(--color-gray-light);
+   border-radius: 8px;
+   font-size: 0.95rem;
+   outline: none;
+   transition: border-color 0.2s;
+ }
+ .input-field input:focus {
+   border-color: var(--color-primary);
+   box-shadow: 0 0 0 3px rgba(106, 119, 196, 0.15);
+ }
+ .btn-submit {
+   width: 100%;
+   padding: 0.8rem;
+   background-color: var(--color-dark);
+   color: var(--color-white);
+   border: none;
+   border-radius: 8px;
+   font-size: 0.95rem;
+   font-weight: 600;
+   cursor: pointer;
+   margin-top: 0.5rem;
+   transition: background-color 0.2s;
+ }
+ .btn-submit:hover {
+   background-color: var(--color-accent);
+ }
+ .signup-prompt {
+   text-align: center;
+   margin-top: 1.2rem;
+   font-size: 0.85rem;
+   color: var(--color-gray-text);
+ }
+ .signup-prompt a {
+   color: var(--color-primary);
+   font-weight: 600;
+   text-decoration: none;
+   margin-left: 0.3rem;
+ }
+ .signup-prompt a:hover {
+   text-decoration: underline;
+ }
+ /* Lado Direito - Showcase */
+ .showcase-section {
+   display: flex;
+   justify-content: center;
+ }
+ .showcase-card {
+   background: linear-gradient(145deg, #ffffff, var(--color-gray-light));
+   border: 1px solid var(--color-secondary);
+   border-radius: 20px;
+   padding: 2.5rem;
+   width: 100%;
+   max-width: 480px;
+   box-shadow: 0 10px 30px rgba(106, 119, 196, 0.12);
+ }
+ .badge {
+   display: inline-block;
+   background-color: var(--color-accent);
+   color: var(--color-dark);
+   padding: 0.25rem 0.75rem;
+   border-radius: 20px;
+   font-size: 0.75rem;
+   font-weight: 700;
+   margin-bottom: 1rem;
+ }
+ .showcase-card h2 {
+   color: var(--color-dark);
+   font-size: 1.5rem;
+   margin-bottom: 0.5rem;
+ }
+ .showcase-card p {
+   color: var(--color-gray-text);
+   font-size: 0.9rem;
+   line-height: 1.4;
+   margin-bottom: 1.5rem;
+ }
+ /* Mockup da Aplicação */
+ .mockup-box {
+   background-color: var(--color-white);
+   border-radius: 12px;
+   padding: 1rem;
+   border: 1px solid var(--color-secondary);
+ }
+ .mockup-header {
+   display: flex;
+   gap: 0.4rem;
+   margin-bottom: 1rem;
+ }
+ .mockup-header .dot {
+   width: 8px;
+   height: 8px;
+   border-radius: 50%;
+   background-color: var(--color-secondary);
+ }
+ .skeleton-line {
+   height: 10px;
+   background: linear-gradient(90deg, var(--color-gray-light), var(--color-accent));
+   border-radius: 4px;
+   margin-bottom: 0.6rem;
+ }
+ .skeleton-line.full { width: 100%; }
+ .skeleton-line.medium { width: 70%; }
+ .skeleton-pill {
+   height: 28px;
+   width: 100px;
+   background-color: var(--color-primary);
+   border-radius: 6px;
+   margin-top: 1rem;
+ }
+ /* Responsividade para telas menores */
+ @media (max-width: 850px) {
+   .main-container {
+     grid-template-columns: 1fr;
+   }
+   .nav-links {
+     display: none;
+   }
+ }

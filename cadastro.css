@@ -1,0 +1,158 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Inter', sans-serif;
+}
+
+
+body {
+   background-color: #EFEFF6;
+   min-height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 20px;
+}
+
+
+
+
+.main-container {
+   display: flex;
+   max-width: 1000px;
+   width: 100%;
+   justify-content: space-between;
+   align-items: center;
+   gap: 60px;
+}
+
+
+
+
+.welcome-section h1 {
+   font-size: 2.5rem;
+   color: #2b2b2b;
+   font-weight: 700;
+   line-height: 1.2;
+   margin-bottom: 15px;
+}
+
+
+.welcome-section p {
+   font-size: 1.05rem;
+   color: #666;
+}
+
+
+
+
+.card-cadastro {
+   background-color: #ffffff;
+   padding: 40px;
+   border-radius: 16px;
+   box-shadow: 0 10px 30px #ac94de44;
+   width: 100%;
+   max-width: 450px;
+   border: 1px solid #ac94de44;
+}
+
+
+.card-cadastro h3 {
+   font-size: 1.5rem;
+   color: #3C3374;
+   margin-bottom: 25px;
+   font-weight: 600;
+}
+
+
+/* Estrutura dos campos de entrada */
+.input-group {
+   display: flex;
+   flex-direction: column;
+   margin-bottom: 20px;
+}
+
+
+.input-group label {
+   font-size: 0.9rem;
+   color: #4a4a4a;
+   margin-bottom: 8px;
+   font-weight: 500;
+}
+
+
+.input-group input {
+   padding: 14px;
+   font-size: 0.95rem;
+   border: 1px solid #e0e0e0;
+   border-radius: 8px;
+   outline: none;
+   transition: all 0.3s ease;
+   background-color: #fff;
+}
+
+
+/* Efeito ao clicar no campo de digitação */
+.input-group input:focus {
+   border-color: #3C3374;
+   box-shadow: 0 0 0 4px #ac94de44;
+}
+
+
+
+
+.btn-cadastrar {
+   width: 100%;
+   padding: 14px;
+   background-color: #EEB2F9;
+   color: white;
+   border: none;
+   border-radius: 8px;
+   font-size: 1rem;
+   font-weight: 600;
+   cursor: pointer;
+   transition: background-color 0.2s ease;
+   margin-top: 10px;
+}
+
+
+.btn-cadastrar:hover {
+   background-color: #3C3374;
+}
+
+
+
+
+.login-link {
+   text-align: center;
+   margin-top: 25px;
+   font-size: 0.9rem;
+   color: #666;
+}
+
+
+.login-link a {
+   color: #3C3374;
+   text-decoration: none;
+   font-weight: 600;
+}
+
+
+.login-link a:hover {
+   text-decoration: underline;
+}
+
+
+/* Responsividade para telas de celular */
+@media (max-width: 768px) {
+   .main-container {
+       flex-direction: column;
+       gap: 40px;
+       text-align: center;
+   }
+  
+   .welcome-section {
+       max-width: 100%;
+   }
+}

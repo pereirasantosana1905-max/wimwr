@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sala da Partida - Wime</title>
+  <link rel="stylesheet" href="../css/partida.css">
+</head>
+<body>
+
+  <!-- Toast de Notificação Push Simulada -->
+  <div id="pushToast" class="push-toast hidden" role="status" aria-live="polite">
+    <span class="push-icon">🔔</span>
+    <div class="push-text">
+      <strong id="pushTitle">Notificação Wime</strong>
+      <p id="pushBody">Mensagem da notificação.</p>
+    </div>
+    <button id="closePushBtn" class="push-close">✕</button>
+  </div>
+
+  <!-- Barra Superior -->
+  <header class="top-bar">
+    <div class="top-bar-left">
+      <a href="paginaprincipal.html" class="btn-voltar-top">
+        <span class="arrow">←</span>
+        <span>Voltar</span>
+      </a>
+      <div class="logo">
+        <span class="logo-icon">✦</span>
+        <span class="logo-text">Wime</span>
+      </div>
+    </div>
+
+    <div class="user-profile">
+      <label class="role-switcher" title="Alternar visão para testar controles">
+        <input type="checkbox" id="toggleOrganizerMode" checked>
+        <span>Visão Organizador</span>
+      </label>
+      <span class="user-name" id="headerUserName">Nome do Usuário</span>
+      <div class="profile-avatar">
+        <span class="avatar-placeholder">U</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Estrutura Principal -->
+  <div class="app-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <button class="menu-btn" id="menuBtn" title="Menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+        <nav class="hamburger-menu" id="hamburgerMenu">
+          <a href="ajuste.html" class="menu-item">Ajuste</a>
+          <a href="historico.html" class="menu-item">Histórico</a>
+          <a href="avisos.html" class="menu-item">Avisos</a>
+          <a href="favoritos.html" class="menu-item">Favoritos</a>
+          <a href="ajuda.html" class="menu-item">Ajuda</a>
+        </nav>
+
+        <div class="sidebar-map">
+          <p>🗺️ Mapa</p>
+        </div>
+      </div>
+
+      <div class="sidebar-bottom">
+        <a href="denuncia.html" class="btn-action">denúncia</a>
+      </div>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+
+      <!-- Cabeçalho da Partida -->
+      <section class="match-header-card" id="matchHeaderCard">
+        <div class="match-header-top">
+          <div>
+            <span class="sport-tag" id="matchSport">Futebol</span>
+            <span class="visibility-tag" id="matchVisibility">🌐 Pública</span>
+            <span class="status-tag active" id="matchStatus">Confirmada</span>
+            <h1 id="matchTitle">Futebol Society - Campo A</h1>
+            <p class="match-meta" id="matchMeta">📍 Quadra Central • 📅 Hoje • 🕒 <span id="matchTimeDisplay">19:00</span></p>
+          </div>
+
+          <div class="slots-box">
+            <span class="slots-count" id="slotsCount">8/10</span>
+            <span class="slots-label" id="slotsAvailable">2 vagas disponíveis</span>
+          </div>
+        </div>
+
+        <!-- Botões de Ação do Jogador -->
+        <div class="match-actions-bar">
+          <button id="btnTogglePresence" class="btn-primary-action">Confirmar Presença</button>
+          <button id="btnShareWhatsApp" class="btn-whatsapp">📲 Convidar no WhatsApp</button>
+          <button id="btnShareInstagram" class="btn-instagram">📸 Link p/ Instagram</button>
+          <button id="btnTestReminder" class="btn-outline-action" title="Simular aviso 1h antes">⏰ Simular Lembrete 1h</button>
+        </div>
+
+        <!-- Controles Exclusivos do Organizador -->
+        <div class="organizer-panel" id="organizerPanel">
+          <div class="organizer-title">🛡️ Controles do Organizador</div>
+          <div class="organizer-controls">
+            <div class="time-change-group">
+              <label for="newTimeInput">Alterar horário:</label>
+              <input type="time" id="newTimeInput" value="19:00">
+              <button type="button" id="btnUpdateTime" class="btn-secondary-action">Atualizar Horário</button>
+            </div>
+            <button type="button" id="btnCancelMatch" class="btn-danger-action">Cancelar Partida</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Grid: Participantes Confirmados + Chat Exclusivo -->
+      <div class="room-grid">
+
+        <!-- Lista de Participantes -->
+        <section class="room-card">
+          <div class="room-card-header">
+            <h2>👥 Participantes Confirmados</h2>
+            <span class="hint-text">Clique para ver o perfil</span>
+          </div>
+          <ul class="players-list" id="playersList"></ul>
+        </section>
+
+        <!-- Chat Exclusivo da Partida -->
+        <section class="room-card chat-card">
+          <div class="room-card-header">
+            <h2>💬 Chat Exclusivo da Partida</h2>
+            <span class="hint-text" id="chatAccessBadge">Acesso liberado</span>
+          </div>
+
+          <!-- Bloqueio caso o usuário não tenha confirmado presença -->
+          <div class="chat-locked" id="chatLockedBox">
+            <p>🔒 Confirme sua presença na partida para acessar a sala de mensagens e combinar os detalhes com os jogadores.</p>
+          </div>
+
+          <!-- Área de Mensagens -->
+          <div class="chat-messages hidden" id="chatMessages"></div>
+
+          <!-- Formulário de Envio -->
+          <form class="chat-form hidden" id="chatForm">
+            <input type="text" id="chatInput" placeholder="Combine o horário, coletes ou detalhes do jogo..." required>
+            <button type="submit" class="btn-send-chat">Enviar</button>
+          </form>
+        </section>
+
+      </div>
+
+    </main>
+  </div>
+
+  <script src="../js/partida.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avisos - Wime</title>
+  <link rel="stylesheet" href="../css/avisos.css">
+</head>
+<body>
+
+  <!-- Faixa / Barra Superior -->
+  <header class="top-bar">
+    <div class="top-bar-left">
+      <a href="paginaprincipal.html" class="btn-voltar-top">
+        <span class="arrow">←</span>
+        <span>Voltar</span>
+      </a>
+      <div class="logo">
+        <span class="logo-icon">✦</span>
+        <span class="logo-text">Wime</span>
+      </div>
+    </div>
+
+    <div class="user-profile">
+      <span class="user-name">Nome do Usuário</span>
+      <div class="profile-avatar" title="Perfil do Usuário">
+        <span class="avatar-placeholder">U</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Estrutura Principal -->
+  <div class="app-layout">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <button class="menu-btn" id="menuBtn" title="Menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+        <nav class="hamburger-menu" id="hamburgerMenu">
+          <a href="ajuste.html" class="menu-item">Ajuste</a>
+          <a href="historico.html" class="menu-item">Histórico</a>
+          <a href="avisos.html" class="menu-item">Avisos</a>
+          <a href="favoritos.html" class="menu-item">Favoritos</a>
+          <a href="ajuda.html" class="menu-item">Ajuda</a>
+        </nav>
+
+        <div class="sidebar-map">
+          <p>🗺️ Mapa</p>
+        </div>
+
+        <div class="sidebar-options">
+          <button class="sidebar-item">Filtro 1</button>
+          <button class="sidebar-item">Filtro 2</button>
+        </div>
+      </div>
+
+      <div class="sidebar-bottom">
+        <a href="denuncia.html" class="btn-action">denúncia</a>
+      </div>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+      <section class="content-container">
+        <h2>🔔 Central de Avisos</h2>
+        <p class="subtitle">Confira as notificações e atualizações mais recentes do sistema.</p>
+
+        <div class="cards-list">
+          <div class="info-card">
+            <div class="card-title-group">
+              <h3>Manutenção Programada</h3>
+              <span class="date-badge">Hoje</span>
+            </div>
+            <p>O sistema passará por uma atualização de servidores às 03:00 de amanhã.</p>
+          </div>
+
+          <div class="info-card">
+            <div class="card-title-group">
+              <h3>Nova Regra de Cancelamento</h3>
+              <span class="date-badge">Ontem</span>
+            </div>
+            <p>Cancelamentos de partidas com menos de 2h de antecedência podem gerar alertas no perfil.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+  </div>
+
+  <script src="../js/avisos.js"></script>
+</body>
+</html>

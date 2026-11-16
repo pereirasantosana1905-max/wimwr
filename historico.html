@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Histórico - Wime</title>
+  <link rel="stylesheet" href="../css/historico.css">
+  <style>
+    .role-badge { font-size: 0.75rem; padding: 3px 8px; border-radius: 6px; font-weight: 700; margin-left: 8px; border: 1.5px solid var(--color-dark); }
+    .role-badge.org { background: var(--color-accent); color: var(--color-dark); }
+    .role-badge.part { background: var(--color-gray-light); color: var(--color-dark); }
+    .btn-cancel-slot { background: #dc2626; color: #fff; border: none; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 0.85rem; font-weight: 600; margin-top: 10px; }
+    .played-with { margin-top: 8px; font-size: 0.85rem; color: var(--color-dark); }
+    .played-with a { color: var(--color-primary); font-weight: 600; text-decoration: none; }
+    .played-with a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <header class="top-bar">
+    <div class="top-bar-left">
+      <a href="paginaprincipal.html" class="btn-voltar-top">
+        <span class="arrow">←</span>
+        <span>Voltar</span>
+      </a>
+      <div class="logo">
+        <span class="logo-icon">✦</span>
+        <span class="logo-text">Wime</span>
+      </div>
+    </div>
+
+    <div class="user-profile">
+      <span class="user-name">Nome do Usuário</span>
+      <div class="profile-avatar" title="Perfil do Usuário">
+        <span class="avatar-placeholder">U</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <button class="menu-btn" id="menuBtn" title="Menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+        <nav class="hamburger-menu" id="hamburgerMenu">
+          <a href="ajuste.html" class="menu-item">Ajuste</a>
+          <a href="historico.html" class="menu-item">Histórico</a>
+          <a href="avisos.html" class="menu-item">Avisos</a>
+          <a href="favoritos.html" class="menu-item">Favoritos</a>
+          <a href="ajuda.html" class="menu-item">Ajuda</a>
+        </nav>
+
+        <div class="sidebar-map">
+          <p>🗺️ Mapa</p>
+        </div>
+      </div>
+
+      <div class="sidebar-bottom">
+        <a href="denuncia.html" class="btn-action">denúncia</a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <section class="content-container">
+        <h2>📅 Próximas Partidas Confirmadas</h2>
+        <p class="subtitle">Gerencie sua presença ou partidas que você organizou.</p>
+
+        <div class="cards-list" id="upcomingList" style="margin-bottom: 28px;">
+          <div class="info-card">
+            <div class="card-title-group">
+              <h3>Futebol Society - Campo A <span class="role-badge part">Participante</span></h3>
+              <span class="status-badge" style="background:var(--color-accent); color:var(--color-dark); border:1px solid var(--color-dark);">Confirmado</span>
+            </div>
+            <p>📍 Quadra Central • 🕒 Hoje às 19:00 • 👥 9/10 Jogadores</p>
+            <button class="btn-cancel-slot" data-action="sair">Cancelar minha presença</button>
+          </div>
+
+          <div class="info-card">
+            <div class="card-title-group">
+              <h3>Vôlei de Quinta - Arena Sol <span class="role-badge org">Organizador</span></h3>
+              <span class="status-badge" style="background:var(--color-accent); color:var(--color-dark); border:1px solid var(--color-dark);">Ativa</span>
+            </div>
+            <p>📍 Arena Sol • 🕒 Quinta às 20:00 • 👥 5/6 Jogadores</p>
+            <button class="btn-cancel-slot" data-action="cancelar-evento">Cancelar partida</button>
+          </div>
+        </div>
+
+        <h2>📜 Histórico de Partidas Passadas</h2>
+        <p class="subtitle">Relembre os locais e as pessoas com quem você jogou.</p>
+
+        <div class="cards-list">
+          <div class="info-card">
+            <div class="card-title-group">
+              <h3>Futebol Society - Campo B <span class="role-badge org">Organizador</span></h3>
+              <span class="status-badge encerrado">Encerrado</span>
+            </div>
+            <p>📍 Quadra Central • 🕒 Ontem às 18:00 • 👥 10/10 Jogadores</p>
+            <div class="played-with">
+              👥 Jogou com: <a href="perfil.html?user=lucas">Lucas Mendes</a>, <a href="perfil.html?user=rafael">Rafael Costa</a>, <a href="perfil.html?user=mariana">Mariana Silva</a>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="card-title-group">
+              <h3>Basquete 3x3 - Parque Central <span class="role-badge part">Participante</span></h3>
+              <span class="status-badge encerrado">Encerrado</span>
+            </div>
+            <p>📍 Arena Parque • 🕒 02/11 às 16:00 • 👥 6/6 Jogadores</p>
+            <div class="played-with">
+              👥 Jogou com: <a href="perfil.html?user=camila">Camila Rocha</a>, <a href="perfil.html?user=rafael">Rafael Costa</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="../js/historico.js"></script>
+</body>
+</html>

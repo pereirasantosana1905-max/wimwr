@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro - Wime</title>
+  <link rel="stylesheet" href="../css/cadastro.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .social-auth { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+    .btn-social { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; background: #fff; color: #0f172a; font-weight: 600; cursor: pointer; font-family: inherit; }
+    .btn-social.apple { background: #000; color: #fff; border-color: #000; }
+    .divider-text { text-align: center; font-size: 0.8rem; color: #64748b; margin: 10px 0; }
+    .sports-select-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+  <div class="card-cadastro">
+    <h3>Cadastre-se no Wime</h3>
+
+    <!-- Cadastro Instantâneo Social -->
+    <div class="social-auth">
+      <button type="button" class="btn-social" onclick="socialSignup('Google')">G Continuar com Google</button>
+      <button type="button" class="btn-social apple" onclick="socialSignup('Apple')"> Continuar com Apple</button>
+    </div>
+
+    <div class="divider-text">ou preencha seus dados</div>
+    
+    <form id="formCadastro">
+      <div class="input-group">
+        <label for="nome">Nome completo:</label>
+        <input type="text" id="nome" placeholder="Seu nome" required>
+      </div>
+
+      <div class="input-group">
+        <label for="foto">Foto de perfil (opcional):</label>
+        <input type="file" id="foto" accept="image/*">
+      </div>
+
+      <div class="input-group">
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" placeholder="nome@exemplo.com" required>
+      </div>
+
+      <div class="input-group">
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" placeholder="Sua senha" required>
+      </div>
+
+      <div class="input-group">
+        <label>Esportes de interesse:</label>
+        <div class="sports-select-row">
+          <label><input type="checkbox" name="esporteCad" value="Futebol" checked> Futebol</label>
+          <label><input type="checkbox" name="esporteCad" value="Vôlei"> Vôlei</label>
+          <label><input type="checkbox" name="esporteCad" value="Basquete"> Basquete</label>
+          <label><input type="checkbox" name="esporteCad" value="Futevôlei"> Futevôlei</label>
+        </div>
+      </div>
+
+      <button type="submit" class="btn-cadastrar">Criar Perfil</button>
+    </form>
+
+    <p class="login-link">Já tem uma conta? <a href="login.html">Clique aqui</a></p>
+  </div>
+
+  <script>
+    function socialSignup(provider) {
+      localStorage.setItem("wime_user", JSON.stringify({ nome: "Usuário " + provider, esportes: ["Futebol"] }));
+      window.location.href = "paginaprincipal.html";
+    }
+
+    document.getElementById("formCadastro").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const nome = document.getElementById("nome").value;
+      const email = document.getElementById("email").value;
+      const esportes = Array.from(document.querySelectorAll('input[name="esporteCad"]:checked')).map(c => c.value);
+      localStorage.setItem("wime_user", JSON.stringify({ nome, email, esportes }));
+      window.location.href = "paginaprincipal.html";
+    });
+  </script>
+</body>
+</html>
